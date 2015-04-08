@@ -1,4 +1,4 @@
-JSHint Tap Reporter
+JSCS Tap Reporter
 ===================
 
-Simple tap reporter for Node-JSHint.
+Simple tap reporter for JSCS.
