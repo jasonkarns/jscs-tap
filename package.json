@@ -1,14 +1,22 @@
 {
-  "author": "Jason Karns <jason@karns.name>",
   "name": "jscs-tap",
-  "description": "jscs compatible reporter to generate tap files (Test Anything Protocol)",
+  "description": "jscs reporter to generate tap output (Test Anything Protocol)",
   "version": "0.0.1",
-  "main": "index.js",
   "homepage": "https://github.com/jasonkarns/jscs-tap",
+  "author": "Jason Karns <jason@karns.name>",
   "repository": {
     "type": "git",
     "url": "git://github.com/jasonkarns/jscs-tap.git"
   },
-  "dependencies": {},
-  "devDependencies": {}
+  "bugs": {
+    "url": "https://github.com/jasonkarns/jscs-tap/issues"
+  },
+  "main": "index.js",
+  "license": "MIT",
+  "keywords": [
+    "jscs",
+    "tap",
+    "reporter",
+    "jscs-reporter"
+  ]
 }
