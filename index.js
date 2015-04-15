@@ -4,20 +4,17 @@ var TapTestGroupTemplate = require('./lib/tap-test-group-template');
 module.exports = function reporter(errorSets) {
   var testGroups = errorSets.map(TestGroup.fromErrorSet);
 
-  var plan = testPlan(testGroups);
-  var results = testGroups.map(display).join("");
+  var results = testGroups.reduce(display, {string:"", tally:1});
 
-  process.stdout.write(plan + results);
+  process.stdout.write(testPlan(results.tally) + results.string);
 };
 
-function testPlan(testGroups){
-  var total = testGroups.reduce(function(tally, group){
-    return tally + group.testCount;
-  }, 0);
-
+function testPlan(total){
   return "1.." + total + "\n";
 }
 
-function display(testGroup){
-  return testGroup.display(TapTestGroupTemplate);
+function display(accumulator, testGroup){
+  accumulator.string += testGroup.display(TapTestGroupTemplate);
+  accumulator.tally += testGroup.testCount;
+  return accumulator;
 }
