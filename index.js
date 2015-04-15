@@ -6,8 +6,12 @@ module.exports = function reporter(errorSets) {
 
   var results = testGroups.reduce(display, {string:"", tally:0});
 
-  process.stdout.write(testPlan(results.tally) + results.string);
+  process.stdout.write(tapHeader() + testPlan(results.tally) + results.string);
 };
+
+function tapHeader(){
+  return "TAP version 13\n";
+}
 
 function testPlan(total){
   return "1.." + total + "\n";
