@@ -14,7 +14,7 @@ function testPlan(total){
 }
 
 function display(accumulator, testGroup){
-  accumulator.string += testGroup.display(TapTestGroupTemplate);
+  accumulator.string += testGroup.display(TapTestGroupTemplate, accumulator.tally);
   accumulator.tally += testGroup.testCount;
   return accumulator;
 }
